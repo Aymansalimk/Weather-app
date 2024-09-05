@@ -19,7 +19,7 @@ const maincontainer =document.querySelector(".container");
 
 // Now you can use these variables to manipulate the DOM
 // Example: userWeather.textContent = 'Sunny';
-const API_key ="07c3065bad17e91f091f1c3751d005fc";
+
 
 function getFromsession(){
     const localCoordinates =sessionStorage.getItem("user-coordinates");
