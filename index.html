@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class=" container flex flex-col  items-center  justify-center min-h-screen min-w-full">
+        <div class="text-5xl text-center">
+            <h1>WEATHER</h1>
+        </div>
+        <div class="flex gap-56 mt-10 text-xl">
+          
+            <p data-userWeather class="bg-slate-400 rounded-md w-36 cursor-pointer text-center">Your Weather</p>
+            <p data-searchWeather class=" rounded-md w-40 cursor-pointer text-center">Search Weather</p>
+        </div>
+        <div class="grantLocationcontainer mt-32 flex flex-col items-center">
+            <img src="assets/location.png" alt="" width="80" height="80">
+            <h3 class="text-xl mt-10">GRANT LOCATION ACCESS</h3>
+            <p class="font-light">Allow Access To Get Weather Information</p>
+            <button class="border mt-10 w-32 rounded-md bg-slate-200">GRANT ACCESS</button>
+
+            
+
+        </div>
+        <div class="searchbar hidden mt-20 ">
+            <form action="">
+                <input type="text" placeholder="Search for loactions..." class="rounded-md border w-96" data-inputbar>
+                <button class="border w-8 rounded-md">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
+        <div class="loading hidden">
+            <img src="assets/loading.gif" alt="" height="150" width="150">
+            <p>Loading</p>
+        </div>
+        <div class="showWeather hidden ">
+            <div class="flex flex-col items-center mt-28 ">
+                <div class="flex">
+                    <span data-cityName></span>
+                    <img data-countryFlag>
+        
+                </div>
+                <p data-weatherDescription></p>
+                <img data-weatherIcon>
+                <p data-temp></p>
+
+            </div>
+            
+            <div data-weatherCard class="flex justify-around w-[1000px] mt-32">
+                <div class="border w-44 flex flex-col items-center pb-5 rounded-md bg-blue-100">
+                    <img src="assets/wind.png" alt="">
+                    <p>WINDSPEED</p>
+                    <p data-windSpeed></p>
+                </div>
+                <div  class="border w-44 flex flex-col items-center pb-5 rounded-md bg-blue-100">
+                    <img src="assets/humidity.png" alt="">
+                    <p>HUMIDITY</p>
+                    <p data-humidity></p>
+                </div>
+                <div  class="border w-44 flex flex-col items-center pb-5 rounded-md bg-blue-100">
+                    <img src="assets/cloud.png" alt="">
+                    <p>CLOUDS</p>
+                    <p data-clouds></p>
+                </div>
+            </div>
+    
+
+        </div>
+       
+    </div>
+    
+
+    <script src="index.js"></script>
+</body>
+</html>
