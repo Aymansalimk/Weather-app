@@ -1,4 +1,4 @@
-// Select the elements with the custom attributes
+
 const userWeather = document.querySelector('[data-userWeather]');
 const searchWeather = document.querySelector('[data-searchWeather]');
 const cityName = document.querySelector('[data-cityName]');
@@ -17,8 +17,6 @@ const weatherCard = document.querySelector('[data-weatherCard]');
 const searchitem = document.querySelector('[data-inputbar]');
 const maincontainer =document.querySelector(".container");
 
-// Now you can use these variables to manipulate the DOM
-// Example: userWeather.textContent = 'Sunny';
 
 
 function getFromsession(){
@@ -58,7 +56,7 @@ function currentPos(position){
 }
 
 async function fetchWeatherinfo(coordinates){
-    const {lat,lon} =coordinates; //distructing or extracting propertiesfrom coordinates object
+    const {lat,lon} =coordinates; 
     loader.classList.remove('hidden');
     try{
         let response=await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_key}&units=metric`);
@@ -111,7 +109,7 @@ function putInfoincards(data){
    
     
     cityName.innerText=data?.name;
-    // countryFlag.src=`https://flagcdn.com/16x12/${data?.}.png`
+
     weatherDescription.innerText=data?.weather?.[0]?.description;
     if (weatherDescription.innerText.toLowerCase() === "clear sky") {
         maincontainer.classList.add('bg-gradient-to-b', 'from-blue-200', 'via-blue-100', 'to-white');
@@ -132,7 +130,7 @@ function putInfoincards(data){
     } else if (weatherDescription.innerText.toLowerCase() === "mist") {
         maincontainer.classList.add('bg-gradient-to-b', 'from-blue-200', 'via-blue-100', 'to-yellow-100');
     } else {
-        // Default background if no specific weather matches
+    
         maincontainer.classList.add('bg-gradient-to-b', 'from-blue-200', 'to-blue-300');
     }
     
